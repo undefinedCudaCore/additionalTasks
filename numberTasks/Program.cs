@@ -12,41 +12,35 @@ namespace numberTasks // Note: actual namespace depends on the project name.
             string cachedNumberString = Console.ReadLine();
 
             int cachedNumberStringLength = cachedNumberString.Length;
+            string cachedNumberStringLengthToString = cachedNumberStringLength.ToString();
 
             int cachedNumber = Convert.ToInt32(cachedNumberString);
 
-            //if (cachedNumberStringLength == 0)
-            //{
-            //    CalculateDigits();
-            //}
-            //else
+            
+                if (cachedNumberStringLength == 2)
 
-            if (cachedNumberStringLength == 2)
-            {
-                int firstNumber = cachedNumber / 10;
-                int secondNumber = cachedNumber % 10;
-                int thirdNumber = firstNumber + secondNumber;
+                    {
+                        int firstNumber = cachedNumber / 10;
+                        int secondNumber = cachedNumber % 10;
+                        int thirdNumber = firstNumber + secondNumber;
 
-                Console.WriteLine(thirdNumber);
-            }
-            else if (cachedNumberStringLength > 2)
-            {
-                int firstNumber = cachedNumber / 100;
-                Console.WriteLine(firstNumber);
-                int secondNumber = cachedNumber / 10 % 10;
-                Console.WriteLine(secondNumber);
-                int thirdNumber = cachedNumber % 10;
-                Console.WriteLine(thirdNumber);
-                int fourthNumber = firstNumber + secondNumber + thirdNumber;
+                        Console.WriteLine(thirdNumber);
+                    }
+                else if (cachedNumberStringLength > 2)
+                    {
+                        int firstNumber = cachedNumber / 100;
+                        int secondNumber = cachedNumber / 10 % 10;
+                        int thirdNumber = cachedNumber % 10;
+                        int fourthNumber = firstNumber + secondNumber + thirdNumber;
 
-                Console.WriteLine(fourthNumber);
-
-            }
-            else if (cachedNumberStringLength > 3)
-            {
-                CalculateDigits();
-            }
+                        Console.WriteLine(fourthNumber);
+                    }
+                else if (cachedNumberStringLength > 3)
+                    {
+                        CalculateDigits();
+                    }
             CalculateDigits();
+
         }
 
         static void RepeatCalculateDigits()
