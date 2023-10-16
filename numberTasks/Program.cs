@@ -20,6 +20,7 @@ namespace numberTasks // Note: actual namespace depends on the project name.
             //    CalculateDigits();
             //}
             //else
+
             if (cachedNumberStringLength == 2)
             {
                 int firstNumber = cachedNumber / 10;
