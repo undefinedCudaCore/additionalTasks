@@ -1,23 +1,34 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Security.Claims;
 
-namespace numberTasks // Note: actual namespace depends on the project name.
+namespace numberTasks
 {
     internal class Program
     {
         static void CalculateDigits()
         {
+
             Console.WriteLine("Enter number:");
 
             string cachedNumberString = Console.ReadLine();
 
             int cachedNumberStringLength = cachedNumberString.Length;
-            string cachedNumberStringLengthToString = cachedNumberStringLength.ToString();
 
             int cachedNumber = Convert.ToInt32(cachedNumberString);
 
-            
-                if (cachedNumberStringLength == 2)
+            switch (cachedNumberStringLength)
+            {
+                case 1:
+                    if (cachedNumberStringLength < 2)
+                    {
+                        Console.WriteLine(cachedNumber);
+                        CalculateDigits();
+                    }
+                    break;
+                
+                case 2:
+                    if (cachedNumberStringLength == 2)
 
                     {
                         int firstNumber = cachedNumber / 10;
@@ -25,8 +36,11 @@ namespace numberTasks // Note: actual namespace depends on the project name.
                         int thirdNumber = firstNumber + secondNumber;
 
                         Console.WriteLine(thirdNumber);
+                        CalculateDigits();
                     }
-                else if (cachedNumberStringLength > 2)
+                    break; 
+                case 3:
+                    if (cachedNumberStringLength >= 3)
                     {
                         int firstNumber = cachedNumber / 100;
                         int secondNumber = cachedNumber / 10 % 10;
@@ -34,54 +48,28 @@ namespace numberTasks // Note: actual namespace depends on the project name.
                         int fourthNumber = firstNumber + secondNumber + thirdNumber;
 
                         Console.WriteLine(fourthNumber);
+                        CalculateDigits();
                     }
-                else if (cachedNumberStringLength > 3)
+                    break;
+                case 4:
+                    if (cachedNumberStringLength >= 4)
                     {
                         CalculateDigits();
                     }
-            CalculateDigits();
-
+                    break;
+                default:
+                    CalculateDigits();
+                    break;
+            }
         }
 
-        static void RepeatCalculateDigits()
-        {
-
-        }
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            //Console.WriteLine("Enter number:");
-
-            //string cachedNumberString = Console.ReadLine();
-
-            //int cachedNumber = Convert.ToInt32(cachedNumberString);
-
-            //bool test = false;
-            //if (test)
-            //{
-
-            //}
-            //for (int i = 0; i < length; i++)
-            //{
-
-            //}
-            //if (cachedNumber != 0 || cachedNumber == 2)
-            //{
-            //    int firstNumber = cachedNumber / 10;
-            //    int secondNumber = cachedNumber % 10;
-            //    int thirdNumber = firstNumber + secondNumber;
-
-            //    Console.WriteLine(thirdNumber);
-            //}
-            //else
-            //{
-            //    CalculateDigits();
-            //}
-
-
-            //Console.ReadKey();
             CalculateDigits();
-
         }
+
     }
+    
 }
