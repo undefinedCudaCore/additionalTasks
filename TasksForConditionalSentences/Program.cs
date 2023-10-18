@@ -2,6 +2,8 @@
 {
     private static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+
         //Console.WriteLine("Task No. 1");
         //Console.WriteLine();
 
@@ -36,5 +38,25 @@
         //{
         //    Console.WriteLine($"The digit {getNumberThreeOne} of the number {getNumberThree} is odd.");
         //}
+        Console.WriteLine("Task No. 3");
+        Console.WriteLine();
+
+        Console.WriteLine("Enter two-digit number:");
+        string getNumberFour = Console.ReadLine();
+
+        int getNumberFourOne = Convert.ToInt32(getNumberFour) / 10;
+        int getNumberFourTwo = Convert.ToInt32(getNumberFour) % 10;
+        int sumOne = getNumberFourOne + getNumberFourTwo;
+
+        if ((sumOne % 2) == 0)
+        {
+            Console.WriteLine("The sum of the digits of this number is divisible without a remainder.");
+        }
+        else
+        {
+            Console.WriteLine("The sum of the digits of this number is divisible with a remainder.");
+
+        }
+
     }
 }
