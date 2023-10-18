@@ -26,7 +26,7 @@ namespace numberTasks
                         CalculateDigits();
                     }
                     break;
-                
+
                 case 2:
                     if (cachedNumberStringLength == 2)
 
@@ -38,7 +38,7 @@ namespace numberTasks
                         Console.WriteLine(thirdNumber);
                         CalculateDigits();
                     }
-                    break; 
+                    break;
                 case 3:
                     if (cachedNumberStringLength >= 3)
                     {
